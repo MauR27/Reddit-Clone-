@@ -1,0 +1,29 @@
+.prueba {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 50px;
+  justify-content: center;
+}
+
+.aaa {
+  display: flex;
+  justify-content: space-between;
+}
+.a {
+  background-color: aqua;
+  height: fit-content;
+  cursor: pointer;
+}
+.a:hover {
+  background-color: antiquewhite;
+}
+
+.time {
+  text-align: end;
+}
+
+.comment-author {
+  margin: 20px 20px 20px 20px;
+  width: 700px;
+}

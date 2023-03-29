@@ -1,3 +1,55 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
+body {
+  background-color: #ebebeb;
+}
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+/* HEADER CSS */
+
+.header {
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  height: 80px;
+  box-shadow: 0px 0px 15px;
+}
+.reddit-icon {
+  height: 40px;
+  width: 40px;
+  color: #3f3098;
+  margin: 0 10px 0 40px;
+}
+
+.reddit-title {
+  font-size: 18px;
+}
+.color-title {
+  color: #3f3098;
+}
+.inputs {
+  margin-left: 400px;
+}
+
+.search-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ebebeb;
+  padding-left: 10px;
+}
+.btn-search {
+  margin-left: 5px;
+  height: 35px;
+  width: 35px;
+}
+
+/* HEADER CSS */
