@@ -24,7 +24,6 @@ export default function SubReddits() {
           className="subreddit-text"
           key={uuid()}
           onClick={(e) => {
-            e.preventDefault();
             setSubReddit(data.url);
           }}
         >

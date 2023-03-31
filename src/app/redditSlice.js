@@ -5,6 +5,7 @@ import { createSelector } from "@reduxjs/toolkit";
 
 const initialState = {
   posts: [],
+  comments: [],
   error: false,
   isLoading: false,
   searchTerm: "",
@@ -36,15 +37,8 @@ export const redditSlice = createSlice({
 });
 
 export default redditSlice.reducer;
-export const {
-  startGetPost,
-  getPostSuccess,
-  getPostFailed,
-  startGetComments,
-  getCommentsSuccess,
-  getCommentsFailed,
-  getSubreddit,
-} = redditSlice.actions;
+export const { startGetPost, getPostSuccess, getPostFailed, getSubreddit } =
+  redditSlice.actions;
 
 export const fetchPosts = (subreddit) => async (dispatch) => {
   try {

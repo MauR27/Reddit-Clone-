@@ -1,19 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { getPostComments } from "../../api/redditApi";
+import React, { useEffect } from "react";
 import moment from "moment";
 import "./Comment.css";
 import { v4 as uuid } from "uuid";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComments } from "../../app/commentsSlice";
+import { Link, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
-export default function Comment(props) {
-  const loadingComments = useSelector((state) => state.reddit.isLoading);
+export default function Comment() {
+  const { linkToComments } = useParams();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.comments.comments);
+  const loadingComments = useSelector((state) => state.comments.isLoading);
 
-  // console.log(loadingComments);
-  if (loadingComments) return <div>Loading comements</div>;
+  useEffect(() => {
+    dispatch(fetchComments(linkToComments));
+  }, [dispatch]);
 
+  console.log(state);
+  if (loadingComments) return <h1>loading</h1>;
   return (
     <div className="prueba">
-      {props.comments.map((comment) => (
+      <Link to="/">back</Link>
+      {state.map((comment) => (
         <div key={uuid()}>
           <div className="a">
             <div className="aaa">
@@ -22,7 +32,10 @@ export default function Comment(props) {
                 {moment.unix(comment.created_utc).fromNow()}
               </h2>
             </div>
-            <p className="comment-author">{comment.body}</p>
+            <ReactMarkdown
+              children={comment.body}
+              remarkPlugins={[remarkGfm]}
+            />
           </div>
         </div>
       ))}
