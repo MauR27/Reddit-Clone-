@@ -18,17 +18,16 @@ export default function Comment() {
     dispatch(fetchComments(linkToComments));
   }, [dispatch]);
 
-  console.log(state);
   if (loadingComments) return <h1>loading</h1>;
   return (
-    <div className="prueba">
+    <div className="container-box">
       <Link to="/">back</Link>
       {state.map((comment) => (
         <div key={uuid()}>
-          <div className="a">
-            <div className="aaa">
-              <h1 className="author">{comment.author}</h1>
-              <h2 className="time">
+          <div className="box-comments">
+            <div className="flex-box-comments">
+              <h1 className="comments-author">{comment.author}</h1>
+              <h2 className="comments-time">
                 {moment.unix(comment.created_utc).fromNow()}
               </h2>
             </div>

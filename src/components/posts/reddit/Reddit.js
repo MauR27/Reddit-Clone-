@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "../../../app/redditSlice";
 import { v4 as uuid } from "uuid";
@@ -8,31 +8,34 @@ import { selectSelectedSubreddit } from "../../../app/redditSlice";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { abbreviateNumber } from "js-abbreviation-number";
+import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 
 export default function Reddit() {
-  const srd = useSelector(selectSelectedSubreddit);
-  const aa = useSelector((state) => state.reddit.isLoading);
+  const subredditSelected = useSelector(selectSelectedSubreddit);
+  const loadingPosts = useSelector((state) => state.reddit.isLoading);
   const dispatch = useDispatch();
-  const data = useSelector(selectFilteredPosts);
+  const posts = useSelector(selectFilteredPosts);
+  const [votes, setVotes] = useState(0);
 
-  useEffect(() => {
-    dispatch(fetchPosts(srd));
-  }, [dispatch, srd]);
+  function upVotes() {
+    setVotes(1);
+  }
 
-  console.log(data);
-  if (aa) return <div>loading</div>;
+  function downVotes() {
+    setVotes(0);
+  }
+  // if (loadingPosts) return <div>loading</div>;
   return (
     <>
       <div className="cards">
-        {data.map((post) => {
-          let ups = abbreviateNumber(post.ups, 1);
-          console.log(ups);
+        {posts.map((post) => {
+          let ups = abbreviateNumber(votes + post.ups, 1);
           return (
             <div className="box-container" key={uuid()}>
               <div className="ups">
-                <h1>up</h1>
-                <h2>{ups}</h2>
-                <h1>up</h1>
+                <TbArrowBigUp onClick={upVotes} />
+                <p>{ups}</p>
+                <TbArrowBigDown onClick={downVotes} />
               </div>
               <h2 className="post-title">{post.title}</h2>
               <div className="cards-box">

@@ -11,7 +11,7 @@ export const commentsSlice = createSlice({
   name: "comments",
   initialState,
   reducers: {
-    startComments(state, action) {
+    startComments(state) {
       state.isLoading = true;
       state.error = false;
     },
@@ -19,7 +19,7 @@ export const commentsSlice = createSlice({
       state.isLoading = false;
       state.comments = action.payload;
     },
-    commentsFailed(state, action) {
+    commentsFailed(state) {
       state.isLoading = false;
       state.error = true;
     },

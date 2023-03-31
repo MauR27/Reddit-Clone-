@@ -1,4 +1,4 @@
-.prueba {
+.container-box {
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -6,11 +6,11 @@
   justify-content: center;
 }
 
-.aaa {
+.flex-box-comments {
   display: flex;
   justify-content: space-between;
 }
-.a {
+.box-comments {
   background-color: aqua;
   height: fit-content;
   cursor: pointer;
@@ -19,11 +19,11 @@
   background-color: antiquewhite;
 }
 
-.time {
-  text-align: end;
+.comments-time {
+  text-align: center;
 }
 
-.comment-author {
-  margin: 20px 20px 20px 20px;
+.comments-author {
+  /* margin: 20px 20px 20px 20px; */
   width: 700px;
 }
