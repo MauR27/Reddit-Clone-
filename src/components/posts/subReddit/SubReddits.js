@@ -2,21 +2,32 @@ import { useSelector, useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
 import "./SubReddits.css";
 import { getSubreddit } from "../../../app/redditSlice";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function SubReddits() {
+export default function SubReddits(props) {
   const state = useSelector((state) => state.subreddits.subreddits);
   const dispatch = useDispatch();
+  const [subredditActive, setSubredditActive] = useState(props.activeSubreddit);
 
+  function handleActiveSubreddit(subRedditName) {
+    setSubredditActive(subRedditName);
+  }
+  console.log(subredditActive);
   return (
     <div className="subreddits-box">
       <h1 className="subreddit-title">SubReddits</h1>
       {state.map((data) => (
-        <div
-          className="subreddit-text"
+        <Link
+          to="/"
           key={uuid()}
           onClick={() => {
             dispatch(getSubreddit(data.url));
+            handleActiveSubreddit(data.display_name);
           }}
+          className={`subreddits${
+            subredditActive === data.display_name ? "Active" : ""
+          }`}
         >
           <img
             src={
@@ -26,8 +37,8 @@ export default function SubReddits() {
             alt={data.display_name}
             className="subreddit-img"
           />
-          <h2>{data.display_name}</h2>
-        </div>
+          <p className="subreddit-name">{data.display_name}</p>
+        </Link>
       ))}
     </div>
   );

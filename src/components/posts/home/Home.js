@@ -8,6 +8,8 @@ import {
 import { useEffect } from "react";
 import { selectSelectedSubreddit } from "../../../app/redditSlice";
 import { fetchSubreddits } from "../../../app/subRedditSlice";
+import Loading from "../../loading/Loading";
+import "./Home.css";
 
 export default function Home() {
   const searchPost = useSelector((post) => post.reddit.searchTerm);
@@ -15,6 +17,7 @@ export default function Home() {
   const subredditSelected = useSelector(selectSelectedSubreddit);
   const dispatch = useDispatch();
   const loadingPosts = useSelector((state) => state.reddit.isLoading);
+  const ll = 0;
 
   useEffect(() => {
     dispatch(fetchPosts(subredditSelected));
@@ -22,15 +25,22 @@ export default function Home() {
   }, [dispatch, subredditSelected]);
 
   if (loadingPosts) {
-    return <div>loading</div>;
+    return (
+      <>
+        <Loading />
+      </>
+    );
   }
 
   if (posts.length === 0) {
     return (
-      <div>
-        <h1>{`Match no found "${searchPost}"`}</h1>
-        <button onClick={() => dispatch(getTermSearch(""))}>
-          back to home
+      <div className="nofound">
+        <h1>{`Match No Found "${searchPost}"`}</h1>
+        <button
+          className="nofound-btn"
+          onClick={() => dispatch(getTermSearch(""))}
+        >
+          Go Back
         </button>
       </div>
     );

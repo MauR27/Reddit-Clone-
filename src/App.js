@@ -6,6 +6,7 @@ import Home from "./components/posts/home/Home";
 import SubReddits from "./components/posts/subReddit/SubReddits";
 
 function App() {
+  const activeSubreddit = "pics";
   return (
     <div className="App">
       <Header />
@@ -14,7 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/comments/:linkToComments" element={<Comment />} />
         </Routes>
-        <SubReddits />
+        <SubReddits activeSubreddit={activeSubreddit} />
       </div>
     </div>
   );
