@@ -30,7 +30,13 @@ export default function Reddit() {
               <div className="cards-box">
                 {imgTest ? (
                   <img src={post.url} className="url-img" alt={post.title} />
-                ) : null}
+                ) : (
+                  <div className="original-post">
+                    <a target="_blank" href={post.url}>
+                      Original post!
+                    </a>
+                  </div>
+                )}
               </div>
               <Link
                 to={`/comments/${encodeURIComponent(post.permalink)}`}
@@ -38,7 +44,9 @@ export default function Reddit() {
               >
                 <MdOutlineModeComment className="btn-comments" />
               </Link>
-              <p className="num-comments">{post.num_comments}</p>
+              <p className="num-comments">
+                {abbreviateNumber(post.num_comments, 1)}
+              </p>
               <h2 className="author-post">{post.author}</h2>
               <p className="time-post">
                 {moment.unix(post.created_utc).fromNow()}

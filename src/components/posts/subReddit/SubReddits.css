@@ -6,8 +6,8 @@
   margin-top: 30px;
   padding: 20px 5px 20px 5px;
   border-radius: 5px;
-  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
-  border-right: 4px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid rgba(91, 91, 91, 0.2);
+  border-right: 4px solid rgba(91, 91, 91, 0.2);
 }
 
 .subreddits {
@@ -46,6 +46,7 @@
 .subreddit-title {
   font-size: 20px;
   margin-left: 20px;
+  margin-bottom: 20px;
 }
 .subreddit-img {
   height: 30px;
