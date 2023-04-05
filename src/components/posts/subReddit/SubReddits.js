@@ -13,7 +13,6 @@ export default function SubReddits(props) {
   function handleActiveSubreddit(subRedditName) {
     setSubredditActive(subRedditName);
   }
-  console.log(subredditActive);
   return (
     <div className="subreddits-box">
       <h1 className="subreddit-title">SubReddits</h1>

@@ -17,7 +17,6 @@ export default function Reddit() {
     <>
       <div className="cards">
         {posts.map((post) => {
-          console.log(post);
           let ups = abbreviateNumber(post.ups, 1);
           let imgRegex = /jpg|png$/;
           let imgTest = imgRegex.test(post.url);
@@ -32,7 +31,7 @@ export default function Reddit() {
                   <img src={post.url} className="url-img" alt={post.title} />
                 ) : (
                   <div className="original-post">
-                    <a target="_blank" href={post.url}>
+                    <a target="_blank" rel="noreferrer" href={post.url}>
                       Original post!
                     </a>
                   </div>
