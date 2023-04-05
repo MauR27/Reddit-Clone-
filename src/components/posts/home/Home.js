@@ -17,7 +17,6 @@ export default function Home() {
   const subredditSelected = useSelector(selectSelectedSubreddit);
   const dispatch = useDispatch();
   const loadingPosts = useSelector((state) => state.reddit.isLoading);
-  const ll = 0;
 
   useEffect(() => {
     dispatch(fetchPosts(subredditSelected));
