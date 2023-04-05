@@ -17,7 +17,7 @@ export default function Comment() {
 
   useEffect(() => {
     dispatch(fetchComments(linkToComments));
-  }, [dispatch]);
+  }, [dispatch, linkToComments]);
 
   if (loadingComments) return <Loading />;
   return (

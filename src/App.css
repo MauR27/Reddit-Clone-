@@ -13,3 +13,9 @@ body {
   flex-direction: row;
   gap: 30px;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
