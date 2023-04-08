@@ -7,15 +7,16 @@ import SubReddits from "./components/posts/subReddit/SubReddits";
 
 function App() {
   const activeSubreddit = "pics";
+  const trueS = true;
   return (
     <div className="App">
       <Header />
       <div className="grid-box">
+        {trueS ? <SubReddits activeSubreddit={activeSubreddit} /> : null}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/comments/:linkToComments" element={<Comment />} />
         </Routes>
-        <SubReddits activeSubreddit={activeSubreddit} />
       </div>
     </div>
   );

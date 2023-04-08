@@ -13,7 +13,7 @@ export default function Likes(props) {
   }
 
   return (
-    <div>
+    <div className="box-likes">
       <div>
         <TbArrowBigUp
           onClick={() => handleLikes(1)}

@@ -1,9 +1,8 @@
 .subreddits-box {
   background-color: #ffffff;
-  grid-column: 2;
   height: fit-content;
-  width: 400px;
-  margin-top: 30px;
+  min-width: 400px;
+  margin: 30px 0 0 15px;
   padding: 20px 5px 20px 5px;
   border-radius: 5px;
   border-bottom: 4px solid rgba(91, 91, 91, 0.2);
@@ -11,7 +10,7 @@
 }
 
 .subreddits {
-  margin: 1px 0 1px 0px;
+  margin: 1px 10px 1px 10px;
   padding: 10px 0 10px 30px;
   display: flex;
   align-items: center;
@@ -23,7 +22,7 @@
   text-decoration: none;
 }
 .subredditsActive {
-  margin: 1px 0 1px 0px;
+  margin: 1px 10px 1px 10px;
   padding: 10px 0 10px 30px;
   display: flex;
   align-items: center;
@@ -54,4 +53,103 @@
   margin-right: 10px;
   border-radius: 100%;
   border: 2px #3f3098 solid;
+}
+
+/* .subreddits-box {
+  background-color: #fff;
+  margin: 30px 0 0 30px;
+  height: fit-content;
+  min-width: 17%;
+  padding: 20px 5px 20px 5px;
+  border-radius: 5px;
+  border-bottom: 4px solid rgba(91, 91, 91, 0.2);
+  border-right: 4px solid rgba(91, 91, 91, 0.2);
+}
+
+.subreddits {
+  margin: 1px 0 1px 0px;
+  padding: 10px 0 10px 30px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: black;
+  text-decoration: none;
+}
+.subreddit-title {
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+
+.subredditsActive {
+  margin: 1px 0 1px 0px;
+  padding: 10px 0 10px 30px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  background-color: #e6e2ff;
+  border-right: #3f3098 solid 2px;
+  border-left: #3f3098 solid 4px;
+  color: #3f3098;
+  font-size: 18px;
+  text-decoration: none;
+}
+.subreddits:hover {
+  background-color: #ebebeb;
+} */
+
+@media screen and (max-width: 1700px) {
+  .subreddits-box {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 200px;
+  }
+  .subreddit-title {
+    font-size: 1.5em;
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .subreddit-title {
+    font-size: 0.8em;
+  }
+  .subreddits {
+    font-size: 0.5em;
+    margin: 1px;
+    padding: 1px;
+    height: 20px;
+  }
+  .subredditsActive {
+    font-size: 0.5em;
+    margin: 1px;
+    padding: 1px;
+    height: 20px;
+    border: none;
+  }
+  .subreddit-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .subreddit-title {
+    font-size: 1em;
+  }
+  .subreddits {
+    font-size: 0.8em;
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+  }
+  .subredditsActive {
+    font-size: 0.8em;
+    margin: 5px;
+    padding: 5px;
+    height: 30px;
+    border: none;
+  }
+  .subreddit-img {
+    display: none;
+  }
 }
