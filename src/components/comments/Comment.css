@@ -1,7 +1,10 @@
 .container-box {
+  min-width: 200px;
+  max-width: 1300px;
+  margin: 30px 40px 0 30px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  word-wrap: break-word;
 }
 
 .flex-box-comments {
@@ -10,52 +13,63 @@
 }
 .box-comments {
   background-color: #fff;
-  height: fit-content;
   cursor: pointer;
-  width: 1000px;
-  margin-left: 300px;
-  padding: 20px 20px 20px 20px;
+  padding: 40px;
   border-radius: 5px;
-  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
-  border-right: 4px solid rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  box-shadow: 0px 10px 10px 0px rgba(78, 78, 78, 0.2);
 }
+
 .box-comments:hover {
-  border-left: 4px solid #3f3098;
-  border-right: 2px solid #3f3098;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .comments-time {
   text-align: center;
-  font-size: 14px;
+  font-size: 0.8em;
 }
 
 .comments-author {
-  font-size: 20px;
+  font-size: 1.2em;
   color: #3f3098;
 }
 
 .comments-text {
-  font-size: 18px;
+  font-size: 1em;
   margin-top: 30px;
 }
 
-.boxWidth {
-  width: 1434px;
-}
-
 .goback-btn {
-  margin-left: 750px;
+  font-size: 1em;
   margin-bottom: 50px;
   cursor: pointer;
   background-color: #3f3098;
-  width: 200px;
+  width: 20%;
   height: 50px;
   color: #fff;
   border-radius: 5px;
   border: none;
   margin-top: 50px;
 }
-
 .goback-btn:hover {
   background-color: #4f42a0;
+}
+.goBack-box {
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .comments-time {
+    font-size: 0.3em;
+  }
+  .comments-text {
+    font-size: 0.5em;
+  }
+  .comments-author {
+    font-size: 0.6em;
+  }
+  .goback-btn {
+    font-size: 0.5em;
+    height: 30px;
+  }
 }

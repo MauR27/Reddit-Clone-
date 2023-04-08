@@ -8,7 +8,6 @@ import moment from "moment";
 import { abbreviateNumber } from "js-abbreviation-number";
 import { MdOutlineModeComment } from "react-icons/md";
 import Likes from "../likes/Likes";
-import ReactPlayer from "react-player";
 
 export default function Reddit() {
   const posts = useSelector(selectFilteredPosts);
@@ -20,7 +19,6 @@ export default function Reddit() {
         let ups = abbreviateNumber(post.ups, 1);
         let imgRegex = /jpg|png$/;
         let imgTest = imgRegex.test(post.url);
-        console.log(post);
         return (
           <div className="box-container" key={uuid()}>
             <div className="title-box">

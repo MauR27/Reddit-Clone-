@@ -33,7 +33,7 @@
 }
 
 .post-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 .comment-box {
   display: flex;
@@ -80,7 +80,7 @@
 }
 @media screen and (max-width: 900px) {
   .post-title {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 }
 @media screen and (max-width: 800px) {
@@ -108,7 +108,7 @@
 }
 @media screen and (max-width: 400px) {
   .post-title {
-    font-size: 0.5em;
+    font-size: 0.7em;
   }
   .box-container {
     margin: 30px 10px 0 10px;

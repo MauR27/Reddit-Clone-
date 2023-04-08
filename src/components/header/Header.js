@@ -4,7 +4,6 @@ import { CiSearch } from "react-icons/ci";
 import { getTermSearch } from "../../app/redditSlice";
 import { useDispatch } from "react-redux";
 import "./Header.css";
-import SubReddits from "../posts/subReddit/SubReddits";
 
 export default function Header() {
   const [searchTermLocal, setSearchTermLocal] = useState("");

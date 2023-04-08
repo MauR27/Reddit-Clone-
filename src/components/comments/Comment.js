@@ -22,9 +22,11 @@ export default function Comment() {
   if (loadingComments) return <Loading />;
   return (
     <div className="container-box">
-      <Link to="/">
-        <button className="goback-btn">Go Back</button>
-      </Link>
+      <div className="goBack-box">
+        <Link to="/">
+          <button className="goback-btn">Go Back</button>
+        </Link>
+      </div>
       {state.map((comment) => (
         <div key={uuid()} className="boxWidth">
           <div className="box-comments">
@@ -39,12 +41,15 @@ export default function Comment() {
               remarkPlugins={[remarkGfm]}
               className="comments-text"
             />
+            {/* <p>{comment.body}</p> */}
           </div>
         </div>
       ))}
-      <Link to="/">
-        <button className="goback-btn">Go Back</button>
-      </Link>
+      <div className="goBack-box">
+        <Link to="/">
+          <button className="goback-btn">Go Back</button>
+        </Link>
+      </div>
     </div>
   );
 }
